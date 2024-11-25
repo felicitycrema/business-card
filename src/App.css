@@ -1,0 +1,186 @@
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-button {
+  display: flex; /* align-items: center; /* Vertically align the icon and label */
+  gap: 24px; /* Add space between the icon and label */  
+   width: 200%;
+  height: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #606263;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-button:hover {
+  background-color: #ccc;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.list-button {
+  display: flex;
+  align-items: center; /* Vertically align the icon and label */
+  gap: 24px; /* Space between the icon and label */
+  width: 100%; /* Adjust width if necessary */
+  height: 60px; /* Increased height for larger buttons */
+  padding: 10px;
+  margin-bottom: 15px; /* Add space below each button */
+  font-size: 1rem;
+  background-color: #606263;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  border-style:ridge;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-button:hover {
+  background-color: #ccc;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.colorful-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #ff0000,
+    #ff9900,
+    #33cc33,
+    #3399ff,
+    #9933ff,
+    #ff3399
+  );
+  background-size: 600%;
+  animation: rotateColors 4s linear infinite, pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.colorful-circle::before {
+  content: '';
+  position: absolute;
+  width: 300px; /* Adjust the diameter of the hollow part */
+  height: 300px;
+  border-radius: 50%;
+  background-color: #f0f0f0; /* Matches the background color */
+  z-index: 1;
+}
+
+h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333; 
+  /* Contrast with the background */
+   margin: 0 0 20px 0;
+  z-index: 2; 
+  position: relative;
+  /* Ensure text is above the hollow center */
+} 
+
+/* h2 {
+  position: relative;
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin: 0 0 20px 0;
+} */
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px; /* Adjusts the position of the underline */
+  transform: translateX(-50%);
+  width: 80%; /* Length of the line */
+  height: 5px; /* Thickness of the line */
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff9900,
+    transparent,
+    #3399ff,
+    #9933ff,
+    #ff3399
+  );
+  background-size: 200%;
+  border-radius: 3px; /* Makes the edges rounded */
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px; /* Matches the position of the underline */
+  transform: translateX(-50%);
+  width: 20%; /* Creates the hollow in the line */
+  height: 5px;
+  background-color: #f0f0f0; /* Matches the background */
+  z-index: 1; /* Ensures the hollow is above the colorful line */
+  border-radius: 3px; /* Matches the rounded edges of the line */
+}
+
+@keyframes rotateColors {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+
